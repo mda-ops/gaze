@@ -1,0 +1,36 @@
+{
+  "name": "gaze",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Gaze dashboard (TypeScript rewrite)",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build:backend": "tsc -p backend/tsconfig.json",
+    "build:frontend": "npm --prefix frontend install && npm --prefix frontend run build",
+    "build": "npm run build:backend && npm run build:frontend",
+    "serve": "npm run build && node backend/dist/server.js",
+    "start": "node backend/dist/server.js",
+    "import-settings": "npm run build:backend && node backend/dist/scripts/import-settings.js",
+    "set-password": "npm run build:backend && node backend/dist/scripts/set-password.js",
+    "test:backend": "vitest run --config backend/vitest.config.ts"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.1.3",
+    "@fastify/static": "^10.1.6",
+    "dotenv": "^17.4.2",
+    "fastify": "^5.2.1",
+    "fastify-plugin": "^6.0.1",
+    "htmlparser2": "^10.1.0",
+    "pg": "^8.20.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/pg": "^8.11.10",
+    "typescript": "^5.7.3",
+    "vitest": "^4.1.10"
+  }
+}

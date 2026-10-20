@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gaze</title>
+  <link rel="icon" href="/static/favicon.png" type="image/png">
+  <link rel="icon" sizes="32x32" href="/static/favicon-32.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css?v={{asset_version}}">
+</head>
+<body class="{{body_class}}">
+  <aside class="sidebar">
+    <a class="brand" href="/c-hub/revenue" aria-label="Open GAZE Model Revenue Overview">
+      <span class="brand-copy">
+        <strong>GAZE</strong>
+        <em>your business seer</em>
+      </span>
+    </a>
+    <nav>
+      {{admin_nav}}
+      {{hub_nav}}
+    </nav>
+    {{profile_panel}}
+  </aside>
+  <main>
+    <header>
+      <div class="page-title-lockup">
+        <span class="agency-mark"><img src="/static/md-logo-cropped.png" alt="MD Agency"></span>
+        <div>
+          <p class="eyebrow agency-eyebrow">MD Agency</p>
+        <h1>{{title}}</h1>
+        {{viewer_note}}
+        </div>
+      </div>
+    </header>
+    {{content}}
+  </main>
+  <script src="/static/app.js?v={{asset_version}}"></script>
+</body>
+</html>
